@@ -1,0 +1,151 @@
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  color: #0a0a0a;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.filterContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.filterLabel {
+  text-align: center;
+  font-weight: bold;
+  margin-right: 3px;
+  font-size: 14px;
+}
+
+.filterInput,
+.filterSelect {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: rgb(238, 230, 213);
+  color: black;
+  margin: 2px;
+  font-size: 12px;
+}
+
+.sortby {
+  margin-top: 8px;
+}
+
+.filterContent {
+  display: inline;
+}
+
+.add {
+  margin-top: 8px;
+}
+
+.addButton {
+  font-weight: bolder;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: rgb(249, 241, 241);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.addButton:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .filterContent {
+    justify-content: flex-start;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .filterContent {
+    justify-content: space-between;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .filter {
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .filter {
+    width: 70%;
+  }
+}
+/* Add this to your CSS file */
+.customModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Adjust the z-index value as needed */
+  background-color: rgb(123, 58, 58);
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modalButton {  top: 10px;
+  right: 10px;
+  background-color: #64a1e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px;
+ 
+
+}
+
+.modalButton:hover {
+  background-color: #0056b3;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .customModal {
+    width: 80%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    padding: 15px;
+  }
+  
+  .modalButton {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .customModal {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  .modalButton {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}

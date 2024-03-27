@@ -1,0 +1,23 @@
+/* header.module.css */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: #0a0a0a;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  
+  .h1 {
+    font-size: 34px;
+
+    margin: 0;
+  }
+  
+  .user {
+    font-size: 34px;
+    cursor: pointer;
+  }
+  
