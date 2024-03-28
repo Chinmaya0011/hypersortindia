@@ -16,9 +16,8 @@ const Pending = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false); // State for modal visibility
 
   useEffect(() => {
-    // Initialize filtered tasks based on all tasks
     let filteredPendingTasks;
-
+  
     if (filteredTasks.length > 0) {
       filteredPendingTasks = filteredTasks.filter(task => task.taskStatus === 'Pending');
     } else if (priorityFilteredTasks.length > 0) {
@@ -26,11 +25,10 @@ const Pending = () => {
     } else {
       filteredPendingTasks = tasks.filter(task => task.taskStatus === 'Pending');
     }
-    
-
+  
     setDeployedTasks(filteredPendingTasks);
   }, [tasks, filteredTasks, priorityFilteredTasks]);
-
+  
 
   const toggleActiveCard = (index) => {
     setActiveCardIndex(activeCardIndex === index ? null : index);

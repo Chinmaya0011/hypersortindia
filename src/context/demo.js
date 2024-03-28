@@ -9,9 +9,17 @@ const TaskContext = createContext();
 // Create the context provider
 const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState(data);
-  const [filteredTasks, setFilteredTasks] = useState([]);
+  const [filteredTasks, setFilteredTasks] = useState(filterTask);
   const [priorityFilteredTasks, setPriorityFilteredTasks] = useState([]);
   
+const filterTask=[
+  {
+    startDate:"",
+    endDate:"",
+    assigne:""
+  }
+]
+
   // Function to add a new task
   const addTask = (newTask) => {
     setTasks([...tasks, newTask]);
@@ -54,27 +62,25 @@ const TaskProvider = ({ children }) => {
     });
   };
   
-
+// Function to filter tasks based on provided criteria
 const filterTasks = (sd, ed, assignee) => {
   setFilteredTasks(tasks.filter(task => {
-    let meetsCriteria = true;
-    
-    if (sd && task.startDate < sd) { // Use >= for start date comparison
-      meetsCriteria = false;
-    }
-    if (ed && task.endDate > ed) {
-      meetsCriteria = false;
-    }
-    if (assignee && !task.assignee.toLowerCase().trim().includes(assignee.toLowerCase().trim())) { // Convert assignee to lowercase, trim, and check inclusion
-      meetsCriteria = false;
-    }
 
-    return meetsCriteria;
-  }));
+if(task.startDate===sd){
+  filterTask.startDate[sd]
+}
+if( task.endDate===ed){
+  filterTask.endDate[ed]
+}
+if(task.assignPerson===assignee){
+  filterTask.assignPerson(assignee)
+}
+
+  })
+)
 };
 
-
-
+console.log(filteredTasks)
 // Function to filter tasks by priority
 const filterPriority = (fpriority) => {
   const priorityFilteredTasks = tasks.filter(task => task.taskPriority === fpriority);

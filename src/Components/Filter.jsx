@@ -27,7 +27,7 @@ const Filter = () => {
     const toDate = event.target.elements.toDate.value;
 
     // Filter by assignee and date range
-    filterTasks(assignee, fromDate, toDate);
+    filterTasks( fromDate, toDate,assignee);
   };
 
   const handleSortByPriority = (event) => {
@@ -47,7 +47,7 @@ const Filter = () => {
           <input type="date" id="fromDate" className={style.filterInput} />
           <input type="date" id="toDate" className={style.filterInput} />
           <br />
-          <button type="submit">Filter</button>
+          <button type="submit" className={style.addButton}>Filter</button>
         </form>
         <div className={style.sortby}>
           <label htmlFor="sortBy" className={style.filterLabel}>Sort By Priority:</label>

@@ -1,126 +1,161 @@
 /* pending.module.css */
-.pending{
-    margin: 10px 20px 10px 20px; /* top right bottom left */
-
+.pending {
+  margin: 10px 20px;
 }
+
 .board {
-    margin: 0;
-    overflow-y: scroll;
-    width: 270px;
-    background-color: rgba(211, 195, 165, 0);
-    height: 600px;
-    border-radius: 10px; /* Add border radius */
+  margin: 0;
+  overflow-y: scroll;
+  width: 270px;
+  background-color: rgba(211, 195, 165, 0);
+  height: 600px;
+  border-radius: 10px; /* Add border radius */
 }
 
 /* Hide scrollbar */
 .board::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent; /* This removes the scrollbar track */
+  width: 0;
+  height: 0;
+  background: transparent; /* This removes the scrollbar track */
+}
+
+.heading {
+  background-color: gray;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s ease; /* Adding transition for smooth animation */
+}
+
+.heading:hover {
+  transform: translateY(-2px); /* Adding hover animation */
 }
 
 
+.card {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 320px;
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+  color: rgb(26, 24, 24);
+  background-color: rgb(244, 244, 244);
+  border-radius: 8px;
+  perspective: 1000px; /* Adding perspective for 3D effect */
+  transition: transform 0.5s; /* Adding transition for smooth animation */
+}
 
-    .heading {
-        background-color: gray;
-        text-align: center;
-    font-size: 1.5rem;
-    padding: 10px;
-   border-radius: 10px 10px 0 0;
-  }
-  .card {
-height: 300px;
-    width: 80%;
-    margin:10px auto;
-    padding: 20px;
-    color: rgb(8, 8, 8);
-background-color: rgba(244, 244, 244, 0.523);
-    border-radius: 8px;
-  }
- 
-  
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg); /* Rotating on hover */
+}
 
-  
-  .taskDetails {
-    margin-bottom: 20px;
-  }
-  
-  .titleAndPriority {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .taskTitle {
-    margin-bottom: 5px;
-  }
-  
-  .taskPriority {
-    border-radius: 10%;
-    padding: 4px;
-    color: wheat;
-    background-color: rgb(120, 120, 244);
-    font-weight: bold;
-  }
-  
-  .description {
-    margin-bottom: 10px;
-  }
-  
-  .assignee {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-  }
-  
-  .actionsButton {
-    margin-left: 10px;
-    font-size: 18px;
-    background-color: #518ccc88;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-  }
-  
-  .actions {
-    display: flex;
-  }
-  
-  .editButton,
-  .deleteButton {
-    margin: 5px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    font-size: 12px;
-    padding: 5px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .statusButton {
-    background-color: #17a2b8;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 3px;
-  }
-  
- 
-  .editModal {
-    position: fixed; /* Ensure modal is positioned relative to the viewport */
-    top: 50%; /* Position the modal at the center vertically */
-    left: 50%; /* Position the modal at the center horizontally */
-    transform: translate(-50%, -50%); /* Center the modal both vertically and horizontally */
-    width: 400px; /* Set the width of the modal */
-    border-radius: 8px; /* Rounded corners */
-    border: 1px solid #ccc; /* Border color */
-    background-color: #fff; /* Background color */
-    padding: 20px; /* Padding */
-    outline: none; /* Remove outline on modal */
-  }
-  
-  
+/* Adding box shadow for depth */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(142, 118, 118, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  transition: transform 0.5s;
+}
+
+.card:hover::before {
+  transform: translateZ(50px);
+}
+
+.taskDetails {
+  margin-bottom: 20px;
+}
+
+.titleAndPriority {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskTitle {
+  margin-bottom: 5px;
+}
+
+.taskPriority {
+  border-radius: 10%;
+  padding: 4px;
+  color: wheat;
+  background-color: rgb(120, 120, 244);
+  font-weight: bold;
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.assignee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.actionsButton {
+  margin-left: 10px;
+  font-size: 18px;
+  background-color: #518ccc88;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Adding animation transition */
+}
+
+.actionsButton:hover {
+  transform: translateY(-2px); /* Adding hover animation */
+}
+
+.actions {
+  display: flex;
+}
+
+.editButton,
+.deleteButton {
+  margin: 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  transform: translateY(-1px); /* Adding hover animation */
+}
+
+.statusButton {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.editModal {
+  position: fixed; /* Ensure modal is positioned relative to the viewport */
+  top: 50%; /* Position the modal at the center vertically */
+  left: 50%; /* Position the modal at the center horizontally */
+  transform: translate(-50%, -50%); /* Center the modal both vertically and horizontally */
+  width: 400px; /* Set the width of the modal */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ccc; /* Border color */
+  background-color: #fff; /* Background color */
+  padding: 20px; /* Padding */
+  outline: none; /* Remove outline on modal */
+}

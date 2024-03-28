@@ -53,7 +53,7 @@ const Pending = () => {
   return (
     <div className={style.pending}>
       <div className={style.board}>
-        <h1 className={style.heading} style={{ backgroundColor: 'blue' }}>In Progress</h1>
+        <h1 className={style.heading} style={{ backgroundColor: 'orange' }}>In Progress</h1>
         {deployedTasks.length === 0 ? (
           <p>No tasks found.</p>
         ) : (
