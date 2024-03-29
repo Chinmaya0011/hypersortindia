@@ -3,6 +3,10 @@ import Header from './Components/Header';
 import Home from './Pages/Home';
 import { TaskProvider } from './context/context.jsx';
 import NewTask from './Components/NewTask.jsx';
+
+
+
+
 function App() {
   return (
     <TaskProvider>

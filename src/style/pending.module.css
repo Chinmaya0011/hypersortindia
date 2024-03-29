@@ -40,7 +40,7 @@
   margin: 10px auto;
   padding: 20px;
   color: rgb(26, 24, 24);
-  background-color: rgb(244, 244, 244);
+  background-color: rgb(255, 255, 255);
   border-radius: 8px;
   perspective: 1000px; /* Adding perspective for 3D effect */
   transition: transform 0.5s; /* Adding transition for smooth animation */
@@ -105,7 +105,8 @@
 .actionsButton {
   margin-left: 10px;
   font-size: 18px;
-  background-color: #518ccc88;
+
+  background-color: rgb(120, 120, 244);
   color: white;
   border: none;
   border-radius: 2px;
@@ -124,7 +125,7 @@
 .editButton,
 .deleteButton {
   margin: 5px;
-  background-color: #28a745;
+  background-color: #31ddac;
   color: white;
   border: none;
   font-size: 12px;
@@ -139,12 +140,13 @@
 }
 
 .statusButton {
-  background-color: #17a2b8;
-  color: white;
+  background-color: rgb(120, 120, 244);
+
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  padding: 3px;
+  padding: 5px;
 }
 
 .editModal {

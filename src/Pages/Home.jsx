@@ -3,6 +3,7 @@ import Filter from '../Components/Filter';
 import style from '../style/home.module.css';
 import Flickity from 'flickity';
 
+
 import 'flickity/css/flickity.css';
 import Pending from '../Components/Pending';
 import InProgress from '../Components/InProgress';

@@ -13,9 +13,10 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "flickity": "^3.0.0",
+    "flickity": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-flickity-component": "^4.0.7",
     "react-modal": "^3.16.1",
     "sweetalert2": "^11.10.7",
     "sweetalert2-react-content": "^5.0.7"
